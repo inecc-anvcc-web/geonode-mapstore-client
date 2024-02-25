@@ -34,23 +34,11 @@ def get_base_left_topbar_menu(context):
     is_mobile = _is_mobile_device(context)
 
     return [
+        {"type": "link", "href": "/catalogue/#/", "label": "Home"},
         {
-            "label": "Data",
-            "type": "dropdown",
-            "items": [
-                {
-                    "type": "link",
-                    "href": "/catalogue/#/search/?f=dataset",
-                    "label": "Datasets",
-                },
-                {
-                    "type": "link",
-                    "href": "/catalogue/#/search/?f=document",
-                    "label": "Documents",
-                }
-                if not is_mobile
-                else None,
-            ],
+            "type": "link",
+            "href": "/catalogue/#/search/?f=dataset",
+            "label": "Datasets",
         },
         {"type": "link", "href": "/catalogue/#/search/?f=map", "label": "Maps"},
         {
@@ -62,6 +50,11 @@ def get_base_left_topbar_menu(context):
             "type": "link",
             "href": "/catalogue/#/search/?f=dashboard",
             "label": "Dashboards",
+        },
+        {
+            "type": "link",
+            "href": "/catalogue/#/search/?f=document",
+            "label": "Documents",
         },
         {
             "type": "link",
@@ -79,6 +72,7 @@ def get_base_right_topbar_menu(context):
         return []
 
     home = {"type": "link", "href": "/", "label": "Home"}
+    atlas = {"type": "link", "href": "/atlas/", "label": "Home"}
 
     about = {
         "label": "About",
@@ -112,7 +106,8 @@ def get_base_right_topbar_menu(context):
                 else None,
             ]
         )
-    return [home, about]
+    # return [home, about]
+    return [atlas]
 
 
 @register.simple_tag(takes_context=True)
