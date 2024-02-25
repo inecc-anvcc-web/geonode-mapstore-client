@@ -72,7 +72,7 @@ def get_base_right_topbar_menu(context):
         return []
 
     home = {"type": "link", "href": "/", "label": "Home"}
-    atlas = {"type": "link", "href": "/atlas/", "label": "Home"}
+    atlas = {"type": "link", "href": "/atlas/", "label": "Atlas"}
 
     about = {
         "label": "About",
