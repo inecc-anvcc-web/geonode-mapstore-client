@@ -167,7 +167,8 @@ def get_user_menu(context):
             devider,
         ],
     }
-    general = [{"type": "link", "href": "/help/", "label": "Help"}, devider, logout]
+    # general = [{"type": "link", "href": "/help/", "label": "Help"}, devider, logout]
+    general = [devider, logout]
     monitoring = []
     if settings.MONITORING_ENABLED:
         monitoring = [
